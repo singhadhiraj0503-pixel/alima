@@ -1,0 +1,101 @@
+body {
+	overflow-x: hidden;
+	font-family: sans-serif;
+}
+
+.hero {
+	background: linear-gradient(135deg, #ffe4ec, #ffd6e7, #fff0f5);
+}
+
+.note-card {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	border-radius: 24px;
+	overflow: hidden;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+	transition: 0.4s ease;
+}
+
+.note-card:hover {
+	transform: translateY(-5px);
+}
+
+.note-card img {
+	width: 100%;
+	height: 380px;
+	object-fit: cover;
+}
+
+.content {
+	padding: 24px;
+}
+
+.content h3 {
+	font-size: 1.8rem;
+	font-weight: bold;
+	color: #ec4899;
+	margin-bottom: 16px;
+}
+
+.content p {
+	line-height: 1.9;
+	color: #444;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+	.note-card {
+		flex-direction: row;
+	}
+
+	.note-card:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+
+	.note-card img {
+		width: 40%;
+		height: auto;
+	}
+
+	.content {
+		width: 60%;
+		padding: 40px;
+	}
+}
+
+/* Oppo / Android Optimization */
+@media (max-width: 480px) {
+	.hero h1 {
+		font-size: 2.8rem;
+	}
+
+	.hero p {
+		font-size: 0.95rem;
+	}
+
+	.content h3 {
+		font-size: 1.5rem;
+	}
+
+	.content p {
+		font-size: 0.95rem;
+		line-height: 1.8;
+	}
+
+	.note-card img {
+		height: 320px;
+	}
+}
+
+/* Animation */
+.note-card {
+	opacity: 0;
+	transform: translateY(50px);
+}
+
+.note-card.show {
+	opacity: 1;
+	transform: translateY(0);
+	transition: all 0.8s ease;
+}
